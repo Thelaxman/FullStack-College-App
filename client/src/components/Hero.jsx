@@ -1,5 +1,6 @@
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { Link } from "react-router-dom";
 
 function Hero() {
   const [text] = useTypewriter({
@@ -27,7 +28,7 @@ function Hero() {
           Find the program that makes the best of your time.
         </p>
         <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black">
-          Learn More
+          <Link to="/Programs">Learn More</Link>
         </button>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import Navbarr from "../components/Navbarr";
+//import Navbarr from "../components/Navbarr";
 import Hero from "../components/Hero";
 import Main from "../components/Main";
 import Cards from "../components/Cards";

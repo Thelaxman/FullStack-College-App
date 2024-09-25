@@ -1,4 +1,5 @@
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 function Main() {
   return (
@@ -12,7 +13,7 @@ function Main() {
             us today.
           </p>
           <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3 text-black">
-            Get Started
+            <Link to="/Login">Get Started</Link>
           </button>
         </div>
       </div>

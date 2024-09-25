@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link, Outlet } from "react-router-dom";
-
+import { NavDropdown } from "react-bootstrap";
+import { useContext } from "react";
+import { UserContext } from "../../context/usercontext";
+import { useNavigate } from "react-router-dom";
 function Navbarr() {
   const [nav, setNav] = useState(false);
+  const { user } = useContext(UserContext);
 
   const handleNav = () => {
     setNav(!nav);
@@ -16,19 +20,31 @@ function Navbarr() {
       </h1>
       <nav>
         <ul className="hidden md:flex">
-          <li className="p-4 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-slate-400 ">
-            {" "}
-            <Link to="/Programs">Programs & Courses</Link>
-          </li>
-          <li className="p-4 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-slate-400">
-            <Link to="/about">About Us</Link>
-          </li>
-          <li className="p-4 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-slate-400">
-            {" "}
-            <Link to="/Login">Login Portal</Link>
+          {user ? (
+            <li className="p-4 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-slate-400 ">
+              {" "}
+              <Link to="/Programs">Programs & Courses</Link>
+            </li>
+          ) : null}
+
+          {!user && (
+            <li className="p-4 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-slate-400">
+              {" "}
+              <Link to="/Login">Login Portal</Link>
+            </li>
+          )}
+
+          {!!user ? (
+            <li className="p-4 max-w-xs transition duration-300 ease-in-out hover:scale-100 hover:bg-slate-400">
+              <Link to="/Courses"> {user.name} </Link>
+            </li>
+          ) : null}
+          <li className="p-4 max-w-xs transition duration-300 ease-in-out hover:scale-100 hover:bg-slate-400">
+            <Link to="/Login">SignOut</Link>
           </li>
         </ul>
       </nav>
+
       <Outlet />
 
       <div onClick={handleNav} className="block md:hidden">
@@ -53,7 +69,7 @@ function Navbarr() {
             <Link to="/Programs">Programs & Courses</Link>
           </li>
           <li className="p-4">
-            <Link to="/about">About Us</Link>
+            <Link to="/">SignOut</Link>
           </li>
           <li className="p-4">
             {" "}

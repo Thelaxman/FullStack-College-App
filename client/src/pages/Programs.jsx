@@ -1,51 +1,8 @@
-const Courses = [
-  {
-    Term: "Term1",
-    Date: "September1-December20",
-    CourseCode: ["Pr111", "C++111", "CompM1111", "IS1111"],
-    Course: [
-      "Project Mangement1",
-      "C++ Programming Fundamentals",
-      "Computer Maintenance",
-      "Information Securtiy1",
-    ],
-  },
-  {
-    Term: "Term1",
-    Date: "September1-December20",
-    CourseCode: ["Pr111", "C++111", "CompM1111", "IS1111"],
-    Course: [
-      "Project Mangement1",
-      "C++ Programming Fundamentals",
-      "Computer Maintenance",
-      "Information Securtiy1",
-    ],
-  },
-  {
-    Term: "Term1",
-    Date: "September1-December20",
-    CourseCode: ["Pr111", "C++111", "CompM1111", "IS1111"],
-    Course: [
-      "Project Mangement1",
-      "C++ Programming Fundamentals",
-      "Computer Maintenance",
-      "Information Securtiy1",
-    ],
-  },
-  {
-    Term: "Term1",
-    Date: "September1-December20",
-    CourseCode: ["Pr111", "C++111", "CompM1111", "IS1111"],
-    Course: [
-      "Project Mangement1",
-      "C++ Programming Fundamentals",
-      "Computer Maintenance",
-      "Information Securtiy1",
-    ],
-  },
-];
+import { useContext } from "react";
+import { UserContext } from "../../context/usercontext";
 
 export default function Footer() {
+  const { user } = useContext(UserContext);
   return (
     <div className="max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300 ">
       <div className="lg: col-span-2 flex justify-between mt-6">
